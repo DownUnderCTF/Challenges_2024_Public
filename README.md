@@ -12,6 +12,8 @@ Files + Solutions for DownUnderCTF 2024 Challenges
 [discord]: https://duc.tf/discord
 [twitter]: https://twitter.com/downunderctf
 
+</div>
+
 ---
 
 # beginner
