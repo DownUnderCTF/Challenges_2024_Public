@@ -1,0 +1,17 @@
+version: "0.1"
+id: ternary-brained
+name: Ternary Brained
+category: rev
+description: |
+  We received a coded message from a parallel version of New Zealand.
+  We also have a copy of the encoder they used to make the message.
+
+  Author: @jscarsbrook and @pix
+hosting_type: file
+tags:
+  - medium
+files:
+  - ./publish/message.bin
+  - ./publish/encoder
+flags:
+  - DUCTF{i_hope_you_liked_that_parallel_universe_deGhie0ca8AFaivu}

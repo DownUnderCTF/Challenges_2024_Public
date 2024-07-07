@@ -1,0 +1,19 @@
+version: "0.1"
+id: super-party-computation
+name: super party computation
+category: crypto
+description: |
+  I think only a cryptographer can enjoy a party like this...
+
+  Author: wednesday
+hosting_type: kube
+connection_info: nc ${host} ${port}
+tags:
+  - medium
+files:
+  - ./publish/server.py
+flags:
+  - DUCTF{d0nt_w0rry_th3_3mus_w1ll_b3_0kay}
+hosting:
+  type: kube
+  template: tcp-challenge-privileged.yaml

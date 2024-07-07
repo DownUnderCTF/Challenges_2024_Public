@@ -1,0 +1,34 @@
+version: "0.1"
+id: bridget-lives
+name: Bridget Lives
+category: osint
+description: |
+  After dropping numerous 0days last year Bridget has flown the coop. This is the last picture she posted before going dark. Where was this photo taken from?
+
+  NOTE: Flag is case-insensitive and requires placing inside `DUCTF{}`! e.g. `DUCTF{name_of_building}`
+
+  Author: a_metre
+hosting_type: file
+tags:
+  - easy
+files:
+  - ./publish/bridget.png
+flags:
+  - {type: "static", content: "DUCTF{four_points}", data: "case_insensitive"}
+  - {type: "static", content: "DUCTF{four_points_sheraton}", data: "case_insensitive"}
+  - {type: "static", content: "DUCTF{four_points_by_sheraton}", data: "case_insensitive"}
+  - {type: "static", content: "DUCTF{four points}", data: "case_insensitive"}
+  - {type: "static", content: "DUCTF{four points sheraton}", data: "case_insensitive"}
+  - {type: "static", content: "DUCTF{four points by sheraton}", data: "case_insensitive"}
+  - {type: "static", content: "four_points", data: "case_insensitive"}
+  - {type: "static", content: "four_points_sheraton", data: "case_insensitive"}
+  - {type: "static", content: "four_points_by_sheraton", data: "case_insensitive"}
+  - {type: "static", content: "four points", data: "case_insensitive"}
+  - {type: "static", content: "four points sheraton", data: "case_insensitive"}
+  - {type: "static", content: "four points by sheraton", data: "case_insensitive"}
+  - {type: "static", content: "DUCTF{four_points_by_sheraton_singapore}", data: "case_insensitive"}
+  - {type: "static", content: "four_points_by_sheraton_singapore", data: "case_insensitive"}
+  - {type: "static", content: "DUCTF{four_points_hotel_by_sheraton_singapore}", data: "case_insensitive"}
+  - {type: "static", content: "four_points_hotel_by_sheraton_singapore", data: "case_insensitive"}
+  - {type: "static", content: "DUCTF{four_points_hotel}", data: "case_insensitive"}
+  - {type: "static", content: "four_points_hotel", data: "case_insensitive"}

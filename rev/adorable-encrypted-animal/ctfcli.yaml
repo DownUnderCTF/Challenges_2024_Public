@@ -1,0 +1,17 @@
+version: "0.1"
+id: adorable-encrypted-animal
+name: adorable encrypted animal
+category: rev
+description: |
+  An adorable animal was encrypted with this program! A flag too, I guess.
+
+  NOTE: `aea` and `libAppleArchive.dylib` are provided for your convenience. They are taken without modification from the macOS system that ran the binary.
+
+  Author: joseph
+hosting_type: file
+tags:
+  - hard
+files:
+  - ./publish/aea.tar.gz
+flags:
+  - DUCTF{h0pe_y0u_enjoy3d_th3_fr33_cat_p1c_:)}

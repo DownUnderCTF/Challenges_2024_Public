@@ -1,0 +1,18 @@
+version: "0.1"
+id: the-door
+name: The Door
+category: hardware
+description: |
+  I lost the remote to the plane hanger door. Help kiwi get back in the air!
+
+  NOTE: Your code has a 5 minute runtime limit
+
+  Author: HexF
+hosting_type: clusterFUQ
+connection_info: https://hardware-31d7c7d167855a00.2024.ductf.dev/
+tags:
+  - medium
+files:
+  - ./publish/schematic.pdf
+flags:
+  - DUCTF{d3bruj1n_s3quenc3s_ar3_fun_22710742}

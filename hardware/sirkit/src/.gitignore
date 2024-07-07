@@ -1,0 +1,13 @@
+sch/sch-backups
+sch/*.dsn
+sch/~*
+sch/*.net
+sch/*.ses
+sch/*.kicad_prl
+sch/*.kicad_pro
+sch/*.kicad_sch
+sch/fp-info-cache
+
+sirkit.json
+sirkit.sp
+freerouting*

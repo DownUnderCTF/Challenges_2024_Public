@@ -1,0 +1,15 @@
+version: "0.1"
+id: offtheramp
+name: offtheramp
+category: osint
+description: "That looks like a pretty cool place to escape by boat, EXAMINE the image and discover the name of this structure. \n\nNOTE: Flag is case-insensitive and requires placing inside `DUCTF{}`! e.g `DUCTF{name_of_structure}`\n\nAuthor: Anon\n"
+hosting_type: file
+tags:
+  - beginner
+files:
+  - ./publish/offtheramp.jpeg
+flags:
+  - {type: "static", content: "DUCTF{olivers hill boat ramp}", data: "case_insensitive"}
+  - {type: "static", content: "DUCTF{olivers_hill_boat_ramp}", data: "case_insensitive"}
+  - {type: "static", content: "olivers hill boat ramp", data: "case_insensitive"}
+  - {type: "static", content: "olivers_hill_boat_ramp", data: "case_insensitive"}

@@ -1,0 +1,21 @@
+version: "0.1"
+id: co2
+name: co2
+category: web
+description: |
+  A group of students who don't like to do things the "conventional" way decided to come up with a CyberSecurity Blog post. You've been hired to perform an in-depth whitebox test on their web application.
+
+  Author: n00b.master.
+hosting_type: kube
+type: kubectf
+tags:
+  - easy
+files:
+  - ./publish/co2.zip
+flags:
+  - DUCTF{_cl455_p0lluti0n_ftw_}
+hosting:
+  type: kube
+  isolated: true
+extra:
+  template_name: web-co2

@@ -1,0 +1,14 @@
+version: "0.1"
+id: dnadecay
+name: DNAdecay
+category: misc
+description: |
+  Our flightless birds can run upto 50km/h but we want them to go faster. I've been messing with a mutigen but it seems to have corrupted. Can you help me recover this research?
+
+  Author: BootlegSorcery@
+tags:
+  - easy
+files:
+  - ./publish/dna.rb
+flags:
+  - DUCTF{7H3_Mit0cHOndRi4_15_7he_P0wEr_HoUsE_of_DA_C3LL}

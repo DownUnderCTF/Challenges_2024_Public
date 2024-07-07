@@ -1,0 +1,19 @@
+version: "0.1"
+id: sniffy
+name: sniffy
+category: web
+description: |
+  Visit our sanctuary to hear the sounds of the Kookaburras!
+
+  Author: hashkitten
+hosting_type: kube
+connection_info: ${url}
+tags:
+  - easy
+files:
+  - ./publish/sniffy.zip
+flags:
+  - DUCTF{koo-koo-koo-koo-koo-ka-ka-ka-ka-kaw-kaw-kaw!!}
+hosting:
+  type: kube
+  template: web-challenge-writefs.yaml

@@ -1,0 +1,8 @@
+Flask
+Werkzeug
+jinja2
+flask_limiter
+Flask_SQLAlchemy
+flask_login
+requests
+flask-cors

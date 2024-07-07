@@ -1,0 +1,4 @@
+﻿Designator,Footprint,Quantity,Value,LCSC Part #
+"C101, C102",0603,2,100nF,C14663
+U101,SOIC-8_3.9x4.9mm_P1.27mm,1,M24C02-WMN,C7562
+U102,SOP-8_3.9x4.9mm_P1.27mm,1,NB25Q40A,C5360474

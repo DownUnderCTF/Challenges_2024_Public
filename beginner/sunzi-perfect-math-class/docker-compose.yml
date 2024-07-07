@@ -1,0 +1,7 @@
+version: "3.3"
+services:
+  "sunzi_perfect_math_class":
+    container_name: sunzi_perfect_math_class
+    build: src/
+    ports:
+      - 1337:1337

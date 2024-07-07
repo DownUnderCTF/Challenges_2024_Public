@@ -1,0 +1,6 @@
+flag = "DUCTF{pǝʇɔǝɟuᴉ_sᴉ_ǝlᴉɟ_dᴉz_ǝɥʇ_oʇ_pɹoʍssɐd_ǝɥʇ}"
+filename = "T4yLN35GKLhxTgaykWxdgROCAwIBE3FO"
+JWT_SECRET = "3gHsCBkpZLi99zyiPqfY/NfFJqZzmNL4BAhYN8rAjRn49baTcnmyGISLD6T58XcWIUYrBfltI2iq2N6OHQSrfqBRFxFta61PvmnfRyn8Ep8T55lvLT8Es62kN3x35Bcb0OZmOGmM/zKf2qadcBq3Nbq1MiIVKJMz4w3JOk4orwFPtSNpNh8uaSQQUNMKTT6cvD9bvRvFNeeHYSPhDFwayPIRr5TJ+BpIRTUTfc1C3WCKoOuXCz2t+ISZo5yYwZ6U5w7NKFTTuDqMP/dXevkVykuntdej55XE3fsCP+UVFUT2JrY+Z9Q1aKTgavQR5smYVn93RlpbFwCoSStoANnoi"
+
+[folders]
+templates = "templates/"

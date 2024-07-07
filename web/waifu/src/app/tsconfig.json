@@ -1,0 +1,21 @@
+{
+  "compilerOptions": {
+    "target": "es6",
+    "module": "commonjs",
+    "moduleResolution": "node",
+    "outDir": "./dist",
+    "strict": true,
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
+    "skipLibCheck": true,
+    "sourceMap": true,
+    "typeRoots": [
+      "./types"
+    ],
+    "useDefineForClassFields": true
+  },
+  "include": [
+    "src",
+    "types"
+  ]
+}

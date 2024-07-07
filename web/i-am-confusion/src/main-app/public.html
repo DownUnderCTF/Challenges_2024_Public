@@ -1,0 +1,44 @@
+<!-- home.html -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>User Portal</title>
+  <link rel="stylesheet" href="public.css">
+</head>
+<body>
+  <header>
+    <h1>User Portal</h1>
+    <button onclick="switchToAdmin()">Switch to Admin</button>
+  </header>
+
+  <nav>
+    <ul>
+      <li><a href="#profile">My Profile</a></li>
+      <li><a href="#messages">Messages</a></li>
+    </ul>
+  </nav>
+
+  <main>
+    <section id="profile">
+      <h2>My Profile</h2>
+    </section>
+
+    <section id="messages">
+      <h2>Messages</h2>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2023 User Portal</p>
+  </footer>
+
+  <script>
+    function switchToAdmin() {
+      window.location.href = 'admin.html';
+    }
+  </script>
+</body>
+</html>

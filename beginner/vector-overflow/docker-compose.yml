@@ -1,0 +1,8 @@
+version: "3.3"
+services:
+  "vector_overflow":
+    container_name: vector_overflow
+    build: src/
+    privileged: true
+    ports:
+      - 1337:1337

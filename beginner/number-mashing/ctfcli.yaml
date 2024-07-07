@@ -1,0 +1,19 @@
+version: "0.1"
+id: number-mashing
+name: number mashing
+category: beginner
+description: |
+  Mash your keyboard numpad in a specific order and a flag might just pop out!
+
+  Author: joseph
+hosting_type: kube
+connection_info: nc ${host} ${port}
+tags:
+  - rev
+files:
+  - ./publish/number-mashing
+flags:
+  - DUCTF{w0w_y0u_just_br0ke_math!!}
+hosting:
+  type: kube
+  template: tcp-challenge-privileged.yaml

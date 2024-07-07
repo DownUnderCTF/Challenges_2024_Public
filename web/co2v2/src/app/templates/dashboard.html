@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+{% block content %}
+    <h1>Your Blog Posts</h1>
+    <div class="card-group">
+    {% for blog in posts %}
+        <div class="card">
+            <div class="card-body">
+                <h5 class="card-title">{{blog.title}}</h5>
+                <p class="card-text">{{blog.content[:100]}}...</p>
+                <a href="/edit/{{blog.id}}" class="card-link">Edit Post</a>
+            </div>
+        </div>
+    {% endfor %}
+    </div>
+    <br>
+    <a class="btn btn-primary" href="/create_post">Create a new Blog Post</a>
+    <br>
+{% endblock content %}

@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+{% block content %}
+<h1>Register</h1>
+<form method="POST" action="">
+    <div class="form-group">
+        <label>Username</label>
+        <input type="text" name="username" class="form-control"/>
+    </div>
+    <div class="form-group">
+        <label>Password</label>
+        <input type="password" class="form-control" name="password"/>
+    </div>
+    <br/>
+    <div class="form-group">
+        <input type="submit" class="btn btn-success" value="Register" />
+    </div>
+</form>
+
+{% endblock content %}

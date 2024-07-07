@@ -1,0 +1,7 @@
+version: "3.3"
+services:
+  "i_am_confusion":
+    container_name: i_am_confusion
+    build: src/
+    ports:
+      - 1337:1337

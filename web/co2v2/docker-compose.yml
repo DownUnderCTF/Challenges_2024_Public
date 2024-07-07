@@ -1,0 +1,20 @@
+version: '3.3'
+
+services:
+  co2v2:
+    container_name: co2v2
+    build: src/
+    links:
+      - xssbot
+    env_file:
+      - './src/.env'
+    ports:
+      - "1337:1337"
+
+  xssbot:
+    image: ghcr.io/downunderctf/docker-vendor/xssbot:chrome
+    privileged: true
+    volumes:
+      - ./src/cookiejar:/var/marvin/auth/cookiejar
+    env_file:
+      - './src/.env'

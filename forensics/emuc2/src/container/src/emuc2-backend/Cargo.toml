@@ -1,0 +1,13 @@
+[package]
+name = "emuc2-backend"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+rocket = { version = "0.5.1", features = ["json"] }
+serde = { version = "1.0", features = ["derive"] }
+serde_json = "1.0"
+jsonwebtoken = "8.1.1"
+chrono = "0.4.38"
+dotenvy = "0.15"
+rand = "0.8.5"

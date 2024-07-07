@@ -1,0 +1,11 @@
+version: "0.1"
+id: badpolicies
+name: Bad Policies
+category: forensics
+description: "Looks like the attacker managed to access the rebels Domain Controller. \n\nCan you figure out how they got access after pulling these artifacts from one of our Outpost machines?\n\nAuthor: TurboPenguin\n"
+tags:
+  - beginner
+files:
+  - ./publish/badpolicies.zip
+flags:
+  - DUCTF{D0n7_Us3_P4s5w0rds_1n_Gr0up_P0l1cy}

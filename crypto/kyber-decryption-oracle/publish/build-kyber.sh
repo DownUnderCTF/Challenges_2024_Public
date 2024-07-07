@@ -1,0 +1,1 @@
+../src/build-kyber.sh

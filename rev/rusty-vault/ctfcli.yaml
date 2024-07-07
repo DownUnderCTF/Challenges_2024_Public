@@ -1,0 +1,15 @@
+version: "0.1"
+id: rusty-vault
+name: rusty vault
+category: rev
+description: |
+  I've learnt all the secure coding practices. I only use memory safe languages and military grade encryption. Surely, you can't break into my vault.
+
+  Author: 1nval1d (Cybears)
+hosting_type: file
+tags:
+  - easy
+files:
+  - ./publish/rusty_vault
+flags:
+  - DUCTF{enCrypTi0n_I5_NoT_Th3_S@me_as_H@sh1ng}

@@ -1,0 +1,19 @@
+version: "0.1"
+id: average-assembly-assignment
+name: average assembly assignment
+category: rev
+description: |
+  This is just your average assembly assignment.
+
+  Author: joseph
+hosting_type: kube
+connection_info: nc ${host} ${port}
+tags:
+  - medium
+files:
+  - ./publish/aaa
+flags:
+  - DUCTF{y0u_pass!_dbfae0837abc0a239fd7abf93be8a01dfec}
+hosting:
+  type: kube
+  template: tcp-challenge-privileged.yaml

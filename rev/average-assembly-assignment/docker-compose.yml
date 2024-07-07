@@ -1,0 +1,8 @@
+version: "3.3"
+services:
+  "average_assembly_assignment":
+    container_name: average_assembly_assignment
+    build: src/
+    privileged: true
+    ports:
+      - 1337:1337

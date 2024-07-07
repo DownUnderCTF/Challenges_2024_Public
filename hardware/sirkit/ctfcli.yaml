@@ -1,0 +1,15 @@
+version: "0.1"
+id: sirkit
+name: sirkit
+category: hardware
+description: |
+  We intercepted some design files. Maybe you can make sense of them?
+
+  Author: HexF
+hosting_type: file
+tags:
+  - hard
+files:
+  - ./publish/sirkit.tar
+flags:
+  - DUCTF{51r_y35_s1r_c0ec4d}

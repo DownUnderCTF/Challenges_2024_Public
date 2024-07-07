@@ -1,0 +1,16 @@
+version: "0.1"
+id: aes
+name: AES
+category: crypto
+description: |
+  Wait hang on... this isn't the AES I was thinking of!
+
+  Author: wednesday
+hosting_type: file
+tags:
+  - hard
+files:
+  - ./publish/cbkap.sage
+  - ./publish/output.sage
+flags:
+  - DUCTF{b0p_1t_br41d_1t_tw15t_1t_c0nju64t3_1t}

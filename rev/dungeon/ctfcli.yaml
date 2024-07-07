@@ -1,0 +1,21 @@
+version: "0.1"
+id: dungeon
+name: dungeon
+category: rev
+description: |
+  You find yourself in a strangely orderly dungeon, with doors in each cardinal direction, some locked, some unlocked. At any rate, it seems dangerous and you likely want to find a way out.
+
+  SSH password: `ductf`
+
+  Author: joseph
+hosting_type: kube
+connection_info: ssh ductf@${host} -p ${port}
+tags:
+  - medium
+files:
+  - ./publish/dungeon
+flags:
+  - DUCTF{you_make_it_out_of_the_dungeon_safely!}
+hosting:
+  type: kube
+  template: tcp-challenge.yaml

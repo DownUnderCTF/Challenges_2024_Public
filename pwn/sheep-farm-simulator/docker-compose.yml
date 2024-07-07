@@ -1,0 +1,8 @@
+version: "3.3"
+services:
+  "sheep_farm_simulator":
+    container_name: sheep_farm_simulator
+    build: src/
+    privileged: true
+    ports:
+      - 1337:1337

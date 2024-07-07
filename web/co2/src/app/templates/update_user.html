@@ -1,0 +1,51 @@
+{% extends "base.html" %}
+{% block headSection %}
+<script>
+        document.addEventListener('DOMContentLoaded', (event) => {
+            const form = document.querySelector('form');
+
+            form.addEventListener('submit', (e) => {
+                e.preventDefault();
+
+                const formData = new FormData(form);
+                const data = {};
+                formData.forEach((value, key) => {
+                    data[key] = value;
+                });
+
+                fetch('/api/update_user_data', {  
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify({ data: data }), 
+                })
+                .then(response => response.json())
+                .then(data => {
+                    console.log('Success:', data);
+                })
+                .catch((error) => {
+                    console.error('Error:', error);
+                });
+            });
+        });</script>
+{% endblock headSection %}
+{% block content %}
+<h1>Update User Details</h1>
+<form method="POST" action="">
+    <div class="form-group">
+        <label>Username</label>
+        <input type="text" name="username" class="form-control"/>
+    </div>
+    <div class="form-group">
+        <label>Nick Name</label>
+        <input type="text" class="form-control" name="nickname"/>
+    </div>
+    <br/>
+    <p>More attributes coming soon...</p>
+    <div class="form-group">
+        <input type="submit" class="btn btn-success" value="Update" />
+    </div>
+    </form>
+
+{% endblock %}

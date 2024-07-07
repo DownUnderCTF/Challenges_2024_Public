@@ -1,0 +1,31 @@
+version: "0.1"
+id: waifu
+name: waifu
+category: web
+description: |
+  The big bad bot got a bit lonely after a hard day of work and made a Web Artificial Intelligence Firewall Utiliy (WAIFU) to talk with and block hacking attempts.
+
+  *Can you bypass the bot's WAIFU?*
+
+  **Important Note**
+
+  - Use `127.0.0.1` (not localhost) instead of container names (the ports the services are listening on are the same).
+
+  Author: ghostccamm
+
+hosting_type: kube
+type: kubectf
+
+tags:
+  - medium
+
+files:
+  - ./publish/waifu.zip
+
+flags:
+  - DUCTF{t0kN_tOOooOOO0Kn_tooKN_t000000000Kn_x60_OwO_w0t_d15_n0_w4F?????questionmark???}
+hosting:
+  type: kube
+  isolated: true
+extra:
+  template_name: web-waifu

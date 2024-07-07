@@ -1,0 +1,22 @@
+version: "0.1"
+id: yawa
+name: yawa
+category: beginner
+description: |
+  Yet another welcome application.
+
+  Author: joseph
+hosting_type: kube
+connection_info: nc ${host} ${port}
+tags:
+  - pwn
+files:
+  - ./publish/yawa.c
+  - ./publish/yawa
+  - ./publish/libc.so.6
+  - ./publish/ld-linux-x86-64.so.2
+flags:
+  - DUCTF{Hello,AAAAAAAAAAAAAAAAAAAAAAAAA}
+hosting:
+  type: kube
+  template: tcp-challenge-privileged.yaml

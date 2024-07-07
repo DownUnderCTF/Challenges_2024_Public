@@ -1,0 +1,18 @@
+version: "0.1"
+id: samiam
+name: SAM I AM
+category: forensics
+description: |
+  The attacker managed to gain Domain Admin on our rebels Domain Controller! Looks like they managed to log on with an account using WMI and dumped some files.
+
+  Can you reproduce how they got the Administrator's Password with the artifacts provided?
+
+  Place the Administrator Account's Password in `DUCTF{}`, e.g. `DUCTF{password123!}`
+
+  Author: TurboPenguin
+tags:
+  - beginner
+files:
+  - ./publish/samiam.zip
+flags:
+  - DUCTF{!checkerboard1}

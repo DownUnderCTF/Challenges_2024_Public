@@ -1,0 +1,19 @@
+version: "0.1"
+id: mirage
+name: mirage
+category: pwn
+description: |
+  A classic v8 challenge - pwn the renderer to steal the flag!
+
+  [mirage.tar.gz](https://bigfiles.duc.tf/2024/mirage/mirage.tar.gz)
+
+  Author: grub and anvbis
+hosting_type: kube
+connection_info: nc ${host} ${port}
+tags:
+  - hard
+flags:
+  - DUCTF{w0w_th15_w0rk5_1n_r3l3453!}
+hosting:
+  type: kube
+  template: tcp-challenge-privileged.yaml

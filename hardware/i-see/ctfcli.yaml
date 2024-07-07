@@ -1,0 +1,18 @@
+version: "0.1"
+id: i-see
+name: I See
+category: hardware
+description: |
+  I too see the kiwi and the emu over there!
+
+  We suggest you solve this challenge before attempting any others.
+
+  Author: HexF
+hosting_type: clusterFUQ
+connection_info: https://hardware-31d7c7d167855a00.2024.ductf.dev/
+tags:
+  - easy
+files:
+  - ./publish/schematic.pdf
+flags:
+  - DUCTF{I2C_the_flag_now_fcee2acf}

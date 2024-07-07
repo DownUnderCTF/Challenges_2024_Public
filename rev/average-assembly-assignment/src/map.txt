@@ -1,0 +1,13 @@
+OWO -> MOV
+AAA -> ACC
+BBB -> BAK
+INP -> INP
+UWU -> ADD
+QAQ -> SUB
+TVT -> SAV
+TOT -> SWP
+WOW -> JMP
+WEW -> JZ
+WAW -> JNZ
+LOL -> LABEL
+NOP -> NOP

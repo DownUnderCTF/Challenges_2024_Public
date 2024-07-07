@@ -1,0 +1,18 @@
+version: "0.1"
+id: poly1305-otm
+name: Poly1305 OTM
+category: crypto
+description: |
+  The Poly1305 hashing algorithm makes for a good one-time MAC. Hopefully I didn't mess anything up when using it.
+
+  Author: joseph
+hosting:
+  type: kube
+  template: tcp-challenge-privileged.yaml
+connection_info: nc ${host} ${port}
+tags:
+  - medium
+files:
+  - ./publish/poly1305-otm.tar.gz
+flags:
+  - DUCTF{breaking_aslr_by_breaking_crypto!}

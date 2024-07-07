@@ -1,0 +1,8 @@
+version: "3.3"
+services:
+  "kyber_decryption_oracle":
+    container_name: kyber_decryption_oracle
+    build: src/
+    privileged: true
+    ports:
+      - 1337:1337

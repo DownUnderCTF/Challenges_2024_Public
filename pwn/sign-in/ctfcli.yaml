@@ -1,0 +1,20 @@
+version: "0.1"
+id: sign-in
+name: sign in
+category: pwn
+description: |
+  Please sign in as root to get a shell.
+
+  Author: joseph
+hosting_type: kube
+connection_info: nc ${host} ${port}
+tags:
+  - easy
+files:
+  - ./publish/sign-in.c
+  - ./publish/sign-in
+flags:
+  - DUCTF{welcome_root!_9dbfa98e17b7af9dbc1}
+hosting:
+  type: kube
+  template: tcp-challenge-privileged.yaml

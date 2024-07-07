@@ -1,0 +1,20 @@
+version: "0.1"
+id: i-am-confusion
+name: i am confusion
+category: web
+description: |
+  The evil hex bug has taken over our administrative interface of our application. It seems that the secret we used to protect our authentication was very easy to guess. We need to get it back!
+
+  Author: richighimi
+connection_info: ${url}:${port}
+tags:
+  - medium
+files:
+  - ./publish/server.js
+  - ./publish/package.json
+flags:
+  - DUCTF{c0nfus!ng_0nE_bUG_@t_a_tIme}
+hosting_type: kube
+hosting:
+  type: kube
+  template: tcp-challenge.yaml

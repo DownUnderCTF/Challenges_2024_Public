@@ -1,0 +1,16 @@
+version: "0.1"
+id: mkductfiso
+name: mkductfiso
+category: misc
+description: |
+  Tactical Combat Wombats have recovered this ISO but were unable to get it to boot.
+
+  We know it contains vital information to where the billbee's are being held! But despite our best efforts, it seems to just loop when we launch it, maybe someone tampered with it. Fix it and get us that flag!
+
+  [ductf_data_disk.iso](https://bigfiles.duc.tf/2024/mkductfiso/ductf_data_disk.iso)
+
+  Author: Pix && joseph
+tags:
+  - medium
+flags:
+  - DUCTF{D4Mn_YuO_R34LLy_G0t-tH4t-T0_Bo0t?!#<3}

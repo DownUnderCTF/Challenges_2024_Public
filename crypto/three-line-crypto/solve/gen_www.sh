@@ -1,0 +1,1 @@
+for i in {1..100}; do curl "https://www.gutenberg.org/cache/epub/${i}/pg${i}.txt" >> www.txt; done

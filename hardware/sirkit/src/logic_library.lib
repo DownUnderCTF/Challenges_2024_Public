@@ -1,0 +1,102 @@
+/*
+  Basic logic cells for a logic family based on 74LVC1G57 and 74LVC1G175
+
+  src: https://github.com/cpldcpu/PCBFlow/blob/main/20_SYNTH/discrete_74LVC_logic_liberty.lib
+*/
+
+
+library(SingleLogicCells) {
+  
+  cell(BUF) {
+    area: 1000;
+    pin(A) { direction: input; }
+    pin(Y) { direction: output;
+              function: "A"; }
+  }
+  
+  cell(ls86_xor) {
+    area: 1;
+    pin(A) { direction: input; }
+    pin(B) { direction: input; }
+    pin(Y) { direction: output;
+              function: "A^B"; }
+
+  }
+
+  cell(ls00_nand) {
+    area: 1;
+    pin(A) { direction: input; }
+    pin(B) { direction: input; }
+    pin(Y) { direction: output;
+              function: "(A*B)'"; }
+
+  }
+
+  cell(ls40_nand) {
+    area: 1;
+    pin(A) { direction: input; }
+    pin(B) { direction: input; }
+    pin(C) { direction: input; }
+    pin(D) { direction: input; }
+    pin(Y) { direction: output;
+              function: "(A*B*C*D)'"; }
+  }
+
+/*
+  cell(ls42_decoder) {
+    area: 100;
+    pin(A) { direction: input; }
+    pin(B) { direction: input; }
+    pin(C) { direction: input; }
+    pin(D) { direction: input; }
+
+    pin(Y0) { direction: output;
+              function: "(!A*!B*!C*!D)'"; }
+    pin(Y1) { direction: output;
+              function: "(A*!B*!C*!D)'"; }
+    pin(Y2) { direction: output;
+              function: "(!A*B*!C*!D)'"; }
+    pin(Y3) { direction: output;
+              function: "(A*B*!C*!D)'"; }
+    pin(Y4) { direction: output;
+              function: "(!A*!B*C*!D)'"; }
+    pin(Y5) { direction: output;
+              function: "(A*!B*C*!D)'"; }
+    pin(Y6) { direction: output;
+              function: "(!A*B*C*!D)'"; }
+    pin(Y7) { direction: output;
+              function: "(A*B*C*!D)'"; }
+    pin(Y8) { direction: output;
+              function: "(!A*!B*!C*D)'"; }
+    pin(Y9) { direction: output;
+              function: "(A*!B*!C*D)'"; }
+  }
+*/
+  cell(ls08_and) {
+    area: 1;
+    pin(A) { direction: input; }
+    pin(B) { direction: input; }
+    pin(Y) { direction: output;
+              function: "A*B"; }
+
+  }
+
+  cell(ls02_nor) {
+    area: 1;
+    pin(A) { direction: input; }
+    pin(B) { direction: input; }
+    pin(Y) { direction: output;
+              function: "(A+B)'"; }
+
+  }
+
+  
+  cell(ls04_inv) {
+    area: 1;
+    pin(A) { direction: input; }
+    pin(Y) { direction: output;
+              function: "A'"; }
+  }
+
+
+}

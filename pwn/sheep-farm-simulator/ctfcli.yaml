@@ -1,0 +1,22 @@
+version: "0.1"
+id: sheep-farm-simulator
+name: sheep farm simulator
+category: pwn
+description: |
+  Practice your sheep grooming skills with this sheep farm simulator!
+
+  Author: joseph
+hosting_type: kube
+connection_info: nc ${host} ${port}
+tags:
+  - medium
+files:
+  - ./publish/sheep.c
+  - ./publish/sheep
+  - ./publish/libc.so.6
+  - ./publish/ld-linux-x86-64.so.2
+flags:
+  - DUCTF{y0u_ar3_the_gre4t3st_sheph3rd!!}
+hosting:
+  type: kube
+  template: tcp-challenge-privileged.yaml

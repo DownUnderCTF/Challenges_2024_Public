@@ -1,0 +1,15 @@
+version: "0.1"
+id: macromagic
+name: Macro Magic
+category: forensics
+description: |
+  We managed to pull this excel spreadsheet artifact from one of our Outpost machines. Its got something sus happening under the hood. After opening we found and captured some suspicious traffic on our network. Can you find out what this traffic is and find the flag!
+
+  Author: TurboPenguin & Pix
+hosting_type: file
+tags:
+  - easy
+files:
+  - ./publish/macromagic.zip
+flags:
+  - DUCTF{M4d3_W1th_AI_by_M0nk3ys}

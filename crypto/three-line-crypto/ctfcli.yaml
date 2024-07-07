@@ -1,0 +1,18 @@
+version: "0.1"
+id: three-line-crypto
+name: three line crypto
+category: crypto
+description: |
+  This crypto challenge could fit in a tweet.
+
+  NOTE: `passage.txt` is English text.
+
+  Author: hashkitten
+hosting_type: file
+tags:
+  - medium
+files:
+  - ./publish/encrypt.py
+  - ./publish/passage.enc.txt
+flags:
+  - DUCTF{when_in_doubt_xort_it_out}

@@ -1,0 +1,15 @@
+version: "0.1"
+id: jmp-flag
+name: jmp flag
+category: rev
+description: |
+  The flag is just a hop, a skip and a jump away.
+
+  Author: joseph
+hosting_type: file
+tags:
+  - easy
+files:
+  - ./publish/jmp_flag
+flags:
+  - DUCTF{tAb1HFK5h3ZgEX7UTMQfsivcPOaJ?nRy8jrYLVB9Ilempw6xWq2zC0d!SDukG4No}

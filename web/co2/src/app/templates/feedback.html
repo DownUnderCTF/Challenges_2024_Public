@@ -1,0 +1,55 @@
+{% extends "base.html" %}
+{% block headSection %}
+<script>
+    function submitFeedback() {
+        const feedback = {
+            title: document.getElementById('title').value,
+            content: document.getElementById('content').value,
+            rating: document.getElementById('rating').value,
+            referred: document.getElementById('referred').value
+        };
+
+        fetch('/save_feedback', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(feedback)
+        })
+        .then(response => response.text())
+        .then(data => {
+            alert(data);
+            document.getElementById('feedbackForm').reset();
+        })
+        .catch(error => {
+            console.error('Error:', error);
+        });
+    }
+</script>
+{% endblock headSection %}
+
+{% block content %}
+<h2>Feedback Form</h2>
+<p>We care about your feedback and safely store it forever! Please provide us with valuable feedback that we can use to improve our website.</p>
+<form id="feedbackForm">
+    <div class="form-group">
+        <label for="title">Title:</label><br>
+        <input type="text" id="title" class="form-control" name="title" required><br><br>
+    </div>
+    <div class="form-group">
+        <label for="content">Content:</label><br>
+        <textarea id="content" class="form-control" name="content" rows="4" cols="50" required></textarea><br><br>
+    </div>
+    <div class="form-group">
+        <label for="rating">Rating:</label><br>
+        <input type="number" id="rating" class="form-control" name="rating" min="1" max="5" required><br><br>
+    </div>
+    <div class="form-group">    
+        <label for="referred">Referred By:</label><br>
+        <input type="text" id="referred" class="form-control" name="referred"><br><br>
+    </div>
+    <div class="form-group">        
+        <button type="button" class="btn btn-success" onclick="submitFeedback()">Submit</button>
+    </div>
+</form>
+{% endblock content %}

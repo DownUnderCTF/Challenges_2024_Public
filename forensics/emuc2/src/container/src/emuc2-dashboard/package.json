@@ -1,0 +1,28 @@
+{
+  "name": "emuc2-dashboard",
+  "version": "0.0.0",
+  "proxy": "http://localhost:8000",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "@mdi/font": "7.0.96",
+    "pinia": "^2.1.7",
+    "roboto-fontface": "*",
+    "vee-validate": "^4.13.1",
+    "vue": "^3.4.0",
+    "vue-router": "4",
+    "vuetify": "^3.5.0",
+    "yup": "^1.4.0"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-vue": "^5.0.4",
+    "sass": "^1.71.1",
+    "unplugin-fonts": "^1.1.1",
+    "unplugin-vue-components": "^0.26.0",
+    "vite": "^5.1.5",
+    "vite-plugin-vuetify": "^2.0.3"
+  }
+}

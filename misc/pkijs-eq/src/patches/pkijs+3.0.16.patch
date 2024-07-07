@@ -1,0 +1,13 @@
+diff --git a/node_modules/pkijs/build/index.js b/node_modules/pkijs/build/index.js
+index c04dd82..3f4a6ab 100644
+--- a/node_modules/pkijs/build/index.js
++++ b/node_modules/pkijs/build/index.js
+@@ -9256,7 +9256,7 @@ class Certificate extends PkiObject {
+ }
+ Certificate.CLASS_NAME = "Certificate";
+ function checkCA(cert, signerCert = null) {
+-    if (signerCert && cert.issuer.isEqual(signerCert.issuer) && cert.serialNumber.isEqual(signerCert.serialNumber)) {
++    if (signerCert && cert.issuer.isEqual(signerCert.issuer) && cert.serialNumber.isEqual(signerCert.serialNumber) && cert.signatureValue.isEqual(signerCert.signatureValue)) {
+         return null;
+     }
+     let isCA = false;

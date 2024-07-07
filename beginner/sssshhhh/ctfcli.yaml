@@ -1,0 +1,19 @@
+version: "0.1"
+id: sssshhhh
+name: sssshhhh
+category: beginner
+description: |
+  Great news! We found the Kookaburras!... Bad news.. They're locked up. We've managed to get access to the central terminal and ripped a binary off of it for you to analyse. Maybe you can find a way to free our friends?
+
+  Author: Pix
+hosting_type: kube
+connection_info: ssh ${host} -p ${port}
+tags:
+  - rev
+files:
+  - ./publish/server
+flags:
+  - DUCTF{L00K_WhO53_L4uGh1nG-N0w-H4HaH4Hah4hA}
+hosting:
+  type: kube
+  template: tcp-challenge-writefs.yaml

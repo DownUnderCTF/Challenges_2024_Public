@@ -1,0 +1,30 @@
+version: "0.1" # ctfcli version (leave as is)
+id: my-array-generator # internal challenge id (do not change this)
+name: my array generator # challenge name to be displayed
+category: crypto # challenge category
+description: |
+  The MAG cipher was a fast stream cipher algorithm submitted to the eSTREAM
+  project of the eCRYPT network. It was not selected for consideration in the
+  second phase, as further cryptanalysis revealed a number of vulnerabilities
+  including a distinguisher, partial-key recovery and in some variants a full
+  key recovery. This challenge implements a weaker version of the MAG cipher
+  with some security features removed.
+
+  Funnily enough, the wikipedia article got deleted just as I was writing this
+  challenge due to a lack of notability.
+
+  Author: wednesday
+hosting_type: file
+# use this if your challenge involves a remote service
+# for http challenges, use ${url} instead
+# connection_info: nc ${host} ${port}
+
+# a list of tags for your challenge
+tags:
+  - easy
+# list of files to hand out to players
+files:
+  - ./publish/challenge.py
+  - ./publish/output.txt
+flags:
+  - DUCTF{n0_d1ffus10n_m4k3s_m3_sad}

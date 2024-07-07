@@ -1,0 +1,12 @@
+version: "0.1"
+id: survey
+name: survey
+category: misc
+description: |
+  What did you love about DUCTF 2024, anything you didn't? Please let us know: [fill out the survey](https://forms.gle/riKe4RM4D2gVvkCS6)
+
+  Author: DUCTF
+tags:
+  - beginner
+flags:
+  - DUCTF{hop3_u_had_fun}

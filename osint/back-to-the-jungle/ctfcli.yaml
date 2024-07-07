@@ -1,0 +1,10 @@
+version: "0.1" # ctfcli version (leave as is)
+id: back-to-the-jungle # internal challenge id (do not change this)
+name: back to the jungle # challenge name to be displayed
+category: osint # challenge category
+description: "Did MC Fat Monke just drop a new track????? \U0001F440\U0001F440\U0001F440\n\nAuthor: ghostccamm\n"
+# a list of tags for your challenge
+tags:
+  - easy
+flags:
+  - DUCTF{wIr_G0iNg_b4K_t00_d3r_jUNgL3_mIt_d15_1!!111!}

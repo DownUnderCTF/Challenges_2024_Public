@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login</title>
+  <link rel="stylesheet" href="login.css">
+</head>
+<body>
+  <div class="login-container">
+    <h2>Login</h2>
+    <div class="notice-section">
+        <p>
+          I have your application under control Emu. How silly of you to use such an easy hardcoded secret. I have now added support to use a key pair so that only I can control the admin panel. GG. 
+
+        - Love,
+        Hex Bug
+        </p>
+    </div>
+
+    <form id="loginForm" action="/login" method="post">
+
+      <label for="username">Username:</label>
+      <input type="text" id="username" name="username" >
+
+      <label for="password">Password:</label>
+      <input type="password" id="password" name="password" >
+
+      <button type="submit">Login</button>
+
+    </form>
+  </div>
+</body>
+</html>

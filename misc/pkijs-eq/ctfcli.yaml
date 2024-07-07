@@ -1,0 +1,20 @@
+version: "0.1"
+id: pkijs-eq
+name: pkijs=
+category: misc
+description: |
+  I've upgraded the library but patched in another bug. Please exploit it!
+
+  Author: joseph
+hosting_type: http
+connection_info: ${url}
+tags:
+  - medium
+files:
+  - ./publish/pkijs-eq.tar.gz
+flags:
+  - DUCTF{deduplicate_and_decimate_07bca839bad0b201b9d}
+type: dynamic
+hosting:
+  type: kube
+  template: web-challenge.yaml

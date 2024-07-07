@@ -1,0 +1,7 @@
+version: "3.3"
+services:
+  parrot_the_emu:
+    container_name: parrot_the_emu
+    build: src/
+    ports: 
+    - 1337:1337

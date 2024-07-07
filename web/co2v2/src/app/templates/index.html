@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="text-center">
+<h1>Welcome to CO2</h1>
+<p>We are a CyberSecurity Blog Post application currently in our early phases, here you can find everything you need such as blog posts... 
+    and well that is it for now, but we will have more for you in the coming weeks/months!!</p>
+<h3>Some blog posts from our users</h3>
+<div class="card-group">
+{% for blog in posts %}
+<div class="card">
+    <div class="card-body">
+        <h5 class="card-title"><a href="/blog/{{blog.id}}">{{blog.title}}</a></h5>
+        <p class="card-text">{{blog.content[:100]}}...</p>
+    </div>
+</div>
+{% endfor %}
+</div>
+<button class="btn btn-info report">Report Error</button>
+    <p><small>Report a problem on this page and an admin will check out the page for any problems</small></p>
+  <script nonce="{{nonce}}">
+    url = "/api/v1/report"
+      $("button.report").click( function () {
+        $.get(url, function(data, status){
+          alert("Report was succesfully made.");
+        })
+      });
+  </script>
+
+{% endblock content %}
+{% block footer %}
+{% endblock footer %}

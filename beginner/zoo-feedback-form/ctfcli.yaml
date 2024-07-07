@@ -1,0 +1,18 @@
+version: "0.1"
+id: zoo-feedback-form
+name: zoo feedback form
+category: beginner
+description: |
+  The zoo wants your feedback! Simply fill in the form, and send away, we'll handle it from there!
+
+  Author: richighimi
+hosting:
+  type: kube
+  template: web-challenge.yaml
+connection_info: ${url}
+tags:
+  - web
+files:
+  - ./publish/zoo-feedback-form.zip
+flags:
+  - DUCTF{emU_say$_he!!0_h0!@_ci@0}

@@ -1,0 +1,15 @@
+version: "0.1"
+id: pressing-buttons
+name: pressing buttons
+category: rev
+description: |
+  If you think about it, a lot about solving CTFs is pressing the right buttons in the right order. So we made an app to help you practice that.
+
+  Author: joseph
+hosting_type: file
+tags:
+  - medium
+files:
+  - ./publish/pressing-buttons.ipa
+flags:
+  - DUCTF{y0u_ar3_g00d_at_pr3ssing_butt0ns_z8y2hzjbx0y7xy19alewp8z9x01pvzq9xy}

@@ -1,0 +1,8 @@
+version: "3.3"
+services:
+  "yawa":
+    container_name: yawa
+    build: src/
+    privileged: true
+    ports:
+      - 1337:1337

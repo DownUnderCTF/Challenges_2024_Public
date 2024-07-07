@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Admin Dashboard</title>
+  <link rel="stylesheet" href="admin.css">
+</head>
+<body>
+  <header>
+    <h1>Admin Dashboard</h1>
+    <button onclick="switchToApp()">Switch to Application</button>
+    <button onclick="logout()">Logout</button>
+  </header>
+
+  <nav>
+    <ul>
+      <li><a href="#users">Manage Users</a></li>
+      <li><a href="#flag" id="flagLink">Flag</a></li>
+    </ul>
+  </nav>
+
+  <script>
+    document.getElementById('flagLink').addEventListener('click', function(event) {
+      event.preventDefault();
+      alert('DUCTF{c0nfus!ng_0nE_bUG_@t_a_tIme}');
+    });
+  </script>
+
+  <main>
+    <section id="users">
+      <h2>Manage Users</h2>
+    </section>
+
+    <section id="statistics">
+      <h2>View Statistics</h2>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2023 Admin Dashboard</p>
+  </footer>
+
+  <script>
+    function switchToApp() {
+      window.location.href = 'public.html';
+    }
+
+    function logout() {
+        window.location.href = 'login.html';
+    }
+  </script>
+</body>
+</html>

@@ -1,0 +1,27 @@
+version: "0.1"
+id: hah-got-em
+name: hah got em
+category: web
+description: |
+  > Deez nutz
+  >
+  > Hah got em
+  >
+  > ...
+  >
+  > Oh by the way I love using my new microservice parsing these arrest reports to PDF
+
+  *The evil bot (2024)*
+
+  Author: ghostccamm
+hosting_type: kube
+connection_info: ${url}
+tags:
+  - easy
+files:
+  - ./publish/hah_got_em.zip
+flags:
+  - DUCTF{dEeZ_r3GeX_cHeCK5_h4h_g0t_eM}
+hosting:
+  type: kube
+  template: web-challenge-writefs.yaml

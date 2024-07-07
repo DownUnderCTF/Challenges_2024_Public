@@ -1,0 +1,7 @@
+version: "3.3"
+services:
+  "pkijs_eq":
+    container_name: pkijs_eq
+    build: src/
+    ports:
+      - 1337:1337

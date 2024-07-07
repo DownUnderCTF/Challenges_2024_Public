@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+{% block content %}
+<br/>
+<div class="form-group">
+    <h4>{{post.title}}</h4>
+</div>
+<div class="form-group">
+    <p>{{post.content}}</p>
+</div>
+{% if current_user.id == post.author %}
+        <p><a class="btn btn-info" href="/edit/{{post.id}}">Edit Post</a></p>
+    {% endif %}
+{% endblock content %}

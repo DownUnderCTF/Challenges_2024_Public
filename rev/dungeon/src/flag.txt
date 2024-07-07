@@ -1,0 +1,1 @@
+DUCTF{you_make_it_out_of_the_dungeon_safely!}

@@ -1,0 +1,13 @@
+diff --git a/hw/arm/netduino2.c b/hw/arm/netduino2.c
+index 83753d5..6b16d4f 100644
+--- a/hw/arm/netduino2.c
++++ b/hw/arm/netduino2.c
+@@ -56,7 +56,7 @@ static void netduino2_machine_init(MachineClass *mc)
+ {
+     mc->desc = "Netduino 2 Machine (Cortex-M3)";
+     mc->init = netduino2_init;
+-    mc->ignore_memory_transaction_failures = true;
++    mc->ignore_memory_transaction_failures = false;
+ }
+ 
+ DEFINE_MACHINE("netduino2", netduino2_machine_init)

@@ -1,0 +1,19 @@
+version: "0.1"
+id: shufflebox
+name: shufflebox
+category: beginner
+description: |
+  I've learned that if you shuffle your text, it's elrlay hrda to tlle htaw eht nioiglra nutpi aws.
+
+  Find the text censored with question marks in `output_censored.txt` and surround it with `DUCTF{}`.
+
+  Author: hashkitten
+hosting_type: file
+tags:
+  - crypto
+files:
+  - ./publish/shufflebox.py
+  - ./publish/output_censored.txt
+flags:
+  - DUCTF{udiditgjwowsuper}
+  - udiditgjwowsuper

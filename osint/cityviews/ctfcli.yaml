@@ -1,0 +1,28 @@
+version: "0.1"
+id: cityviews
+name: cityviews
+category: osint
+description: |
+  After having to go on the run, I've had to bunker down. Which building did I capture this picture from?
+
+  NOTE: Flag is case-insensitive and requires placing inside `DUCTF{}`! e.g `DUCTF{building_name}`
+
+  Author: Anon
+hosting_type: file
+tags:
+  - easy
+files:
+  - ./publish/cityviews.jpeg
+flags:
+  - {type: "static", content: "DUCTF{hotel_indigo_melbourne}", data: "case_insensitive"}
+  - {type: "static", content: "DUCTF{hotel_indigo_melbourne_on_flinders}", data: "case_insensitive"}
+  - {type: "static", content: "hotel_indigo_melbourne", data: "case_insensitive"}
+  - {type: "static", content: "hotel_indigo_melbourne_on_flinders", data: "case_insensitive"}
+  - {type: "static", content: "DUCTF{hotel indigo melbourne}", data: "case_insensitive"}
+  - {type: "static", content: "DUCTF{hotel indigo melbourne on flinders}", data: "case_insensitive"}
+  - {type: "static", content: "hotel indigo melbourne", data: "case_insensitive"}
+  - {type: "static", content: "hotel indigo melbourne on flinders", data: "case_insensitive"}
+  - {type: "static", content: "DUCTF{hotel_indigo}", data: "case_insensitive"}
+  - {type: "static", content: "hotel_indigo", data: "case_insensitive"}
+  - {type: "static", content: "DUCTF{hotel indigo}", data: "case_insensitive"}
+  - {type: "static", content: "DUCTF{hotel_indigo}", data: "case_insensitive"}

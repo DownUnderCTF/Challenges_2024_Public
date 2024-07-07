@@ -1,0 +1,21 @@
+version: "0.1"
+id: v-for-vieta
+name: V for Vieta
+category: crypto
+description: |
+  Have this on loop while you solve :bop:
+
+  https://www.youtube.com/watch?v=jsbVtNa5-hg
+
+  Author: wednesday
+hosting_type: kube
+connection_info: nc ${host} ${port}
+tags:
+  - easy
+files:
+  - ./publish/server.py
+flags:
+  - DUCTF{jump1n6_4nd_fl1pp1n6_up_7h3_hyp3r8011c_14dd3r}
+hosting:
+  type: kube
+  template: tcp-challenge-privileged.yaml

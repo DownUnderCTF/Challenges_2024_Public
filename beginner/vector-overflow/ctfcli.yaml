@@ -1,0 +1,20 @@
+version: "0.1"
+id: vector-overflow
+name: vector overflow
+category: beginner
+description: |
+  Please overflow into the vector and control it!
+
+  Author: joseph
+hosting_type: kube
+connection_info: nc ${host} ${port}
+tags:
+  - pwn
+files:
+  - ./publish/vector_overflow
+  - ./publish/vector_overflow.cpp
+flags:
+  - DUCTF{y0u_pwn3d_th4t_vect0r!!}
+hosting:
+  type: kube
+  template: tcp-challenge-privileged.yaml

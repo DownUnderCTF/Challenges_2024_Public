@@ -1,0 +1,19 @@
+version: "0.1"
+id: emuc2
+name: emuc2
+category: forensics
+description: |
+  As all good nation states, we have our own malware and C2 for offensive operations. But someone has got the source code and is using it against us! Here's a capture of traffic we found on one of our laptops...
+
+  Author: BootlegSorcery@
+hosting_type: kube
+tags:
+  - easy
+files:
+  - ./publish/challenge.pcap
+  - ./publish/sslkeylogfile.txt
+flags:
+  - DUCTF{pǝʇɔǝɟuᴉ_sᴉ_ǝlᴉɟ_dᴉz_ǝɥʇ_oʇ_pɹoʍssɐd_ǝɥʇ}
+hosting:
+  type: kube
+  template: web-challenge-writefs.yaml

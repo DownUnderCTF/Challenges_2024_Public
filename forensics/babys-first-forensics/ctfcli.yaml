@@ -1,0 +1,13 @@
+version: "0.1"
+id: babys-first-forensics
+name: Baby's First Forensics
+category: forensics
+description: "They've been trying to breach our infrastructure all morning! They're trying to get more info \non our covert kangaroos! We need your help, we've captured some traffic of them attacking us,\ncan you tell us what tool they were using and its version?\n\nNOTE: Wrap your answer in the `DUCTF{}`, e.g. `DUCTF{nmap_7.25}`\n\nAuthor: Pix\n"
+hosting_type: file
+tags:
+  - beginner
+files:
+  - ./publish/capture.pcap
+flags:
+  - {type: "static", content: "DUCTF{nikto_2.1.6}", data: "case_insensitive"}
+  - {type: "static", content: "nikto_2.1.6", data: "case_insensitive"}

@@ -1,0 +1,25 @@
+read_verilog sirkit.v
+hierarchy -check -top sirkit
+flatten
+
+rename -top main
+
+
+tribuf
+techmap
+
+proc
+opt
+fsm
+opt
+
+synth
+dfflibmap -liberty logic_library.lib
+abc -liberty logic_library.lib
+opt_clean -purge
+
+opt
+
+write_spice sirkit.sp
+write_json sirkit.json
+show main

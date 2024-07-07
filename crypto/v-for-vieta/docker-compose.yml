@@ -1,0 +1,8 @@
+version: "3.3"
+services:
+  "v_for_vieta":
+    container_name: v_for_vieta
+    build: src/
+    privileged: true
+    ports:
+      - 1337:1337

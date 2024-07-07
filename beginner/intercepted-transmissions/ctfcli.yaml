@@ -1,0 +1,22 @@
+version: "0.1"
+id: intercepted-transmissions
+name: Intercepted Transmissions
+category: beginner
+description: |
+  Those monsters! They've kidnapped the Quokkas! Who in their right mind would capture those friendly little guys.. We've managed to intercept a CCIR476 transmission from the kidnappers, we think it contains the location of our friends! Can you help us decode it? We managed to decode the first two characters as '##'
+
+  NOTE: Wrap the decoded message in `DUCTF{}`.
+
+  Author: Pix
+hosting_type: file
+tags:
+  - misc
+files:
+  - ./publish/encoding
+flags:
+  - "DUCTF{##TH3 QU0KK4'S AR3 H3LD 1N F4C1LITY #11911!}"
+  - "##TH3 QU0KK4'S AR3 H3LD 1N F4C1LITY #11911!"
+  - "##TH3 QU0KK4BELLS AR3 H3LD 1N F4C1LITY #11911!"
+  - "##TH3 QU0KK4S AR3 H3LD 1N F4C1LITY #11911!"
+  - "DUCTF{##TH3 QU0KK4BELLS AR3 H3LD 1N F4C1LITY #11911!}"
+  - "DUCTF{##TH3 QU0KK4S AR3 H3LD 1N F4C1LITY #11911!}"

@@ -1,0 +1,20 @@
+version: "0.1"
+id: the-other-minimal-php
+name: the other minimal php
+category: misc
+description: |
+  Show us that you are the true PHP master, again!
+
+  Author: hashkitten
+hosting_type: http
+connection_info: ${url}
+tags:
+  - medium
+files:
+  - ./publish/index.php
+  - ./publish/Dockerfile
+flags:
+  - DUCTF{crouching tiger hidden php}
+hosting:
+  type: kube
+  template: web-challenge-writefs.yaml

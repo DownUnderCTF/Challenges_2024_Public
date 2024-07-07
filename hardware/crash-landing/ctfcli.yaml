@@ -1,0 +1,16 @@
+version: "0.1"
+id: crash-landing
+name: Crash Landing
+category: hardware
+description: |
+  Our little kiwi is trying to fly!
+
+  Author: HexF
+hosting_type: file
+tags:
+  - medium
+  - rev
+files:
+  - ./publish/crash_landing.bin
+flags:
+  - DUCTF{m3m3_m4p_or_m3mmap_d45832a29d}

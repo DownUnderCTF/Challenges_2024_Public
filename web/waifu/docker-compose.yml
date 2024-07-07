@@ -1,0 +1,26 @@
+version: "3.2"
+
+services:
+  waifu-app:
+    build: ./src/app/
+    environment:
+      - OPENAI_API_KEY=
+      - BASE_URL=http://waifu-app:3000
+      - ADMIN_USER=waifu-admin
+      - ADMIN_PASSWORD=91b691b8160709c882ff92c792c2b5c8b04e20b8099c7594e4fe011dc588064d
+      - BOT_TOKEN=258cb174827389d24f9e17a8992fe1a1ea37ae825beac6f4d367ed1bea6674ff
+      - FLAG=DUCTF{t0kN_tOOooOOO0Kn_tooKN_t000000000Kn_x60_OwO_w0t_d15_n0_w4F?????questionmark???}
+
+  www-bot:
+    build: ./src/www-bot/
+    environment:
+      - APP_URL=http://waifu-app:3000
+    ports:
+      - 1337:1337
+
+  xss-bot:
+    build: ./src/xss-bot/
+    privileged: true
+    environment:
+      - OUTBOUND_AUTH_METHOD=http-get
+      - OUTBOUND_AUTH_HTTP_GET_URL=http://waifu-app:3000/auth/bot/login?token=258cb174827389d24f9e17a8992fe1a1ea37ae825beac6f4d367ed1bea6674ff

@@ -1,0 +1,18 @@
+version: "0.1"
+id: parrot-the-emu
+name: parrot the emu
+category: beginner
+description: |
+  It is so nice to hear Parrot the Emu talk back
+
+  Author: richighimi
+hosting:
+  type: kube
+  template: web-challenge.yaml
+connection_info: ${url}
+tags:
+  - web
+files:
+  - ./publish/parrot-the-emu.zip
+flags:
+  - DUCTF{PaRrOt_EmU_ReNdErS_AnYtHiNg}

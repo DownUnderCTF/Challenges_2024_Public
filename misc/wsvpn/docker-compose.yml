@@ -1,0 +1,7 @@
+version: "3.3"
+services:
+  "wsvpn":
+    container_name: wsvpn
+    build: src/
+    ports:
+      - 1337:1337

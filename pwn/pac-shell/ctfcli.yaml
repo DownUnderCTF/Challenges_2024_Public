@@ -1,0 +1,19 @@
+version: "0.1"
+id: pac-shell
+name: pac shell
+category: pwn
+description: |
+  Welcome to pac shell v0.0.1. You have arbitrary read and write, please turn this into arbitrary code execution!
+
+  Author: joseph
+hosting_type: kube
+connection_info: nc ${host} ${port}
+tags:
+  - easy
+files:
+  - ./publish/pac_shell.tar.gz
+flags:
+  - DUCTF{did_you_just_bruteforce_the_pac?:(}
+hosting:
+  type: kube
+  template: tcp-challenge-privileged.yaml

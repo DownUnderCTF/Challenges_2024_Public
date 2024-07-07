@@ -1,0 +1,9 @@
+version: "3"
+
+services:
+  emuc2:
+    build:
+      context: ./src/container
+      dockerfile: Dockerfile
+    ports:
+      - "1337:1337"

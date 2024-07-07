@@ -1,0 +1,26 @@
+version: "0.1"
+id: pkijs-lt
+name: pkijs<
+category: misc
+description: |
+  A certificate validation issue affects this library in v3.0.15. Please exploit it!
+
+  Author: joseph
+hosting_type: http
+connection_info: ${url}
+tags:
+  - medium
+files:
+  - ./publish/pkijs-lt.tar.gz
+flags:
+  - DUCTF{nice_splice_sice_a69bdb8eb2ca9e1}
+type: dynamic
+value: 250
+extra:
+  function: logarithmic_custom
+  initial: 250
+  minimum: 75
+  decay: 175
+hosting:
+  type: kube
+  template: web-challenge.yaml

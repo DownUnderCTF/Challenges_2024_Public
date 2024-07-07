@@ -1,0 +1,56 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div id="grid-item">
+    <h3 style="color: rgb(207, 206, 206);">Send the admin bot!</h3>
+</div>
+
+<div id="grid-item">
+    <img src="/images/dance.gif" style="max-width: 80%;">
+</div>
+
+{% if msg is defined %}
+<div id="grid-item">
+    <h3 style="color: rgb(244, 244, 244);">{{ msg }}</h3>
+</div>
+{% endif %}
+
+{% if error is defined %}
+<div id="grid-item">
+    <h3 style="color: rgb(255, 0, 0);">{{ error }}</h3>
+</div>
+{% endif %}
+
+<form action="/sendbot" method="POST">
+    <div id="grid-item">
+        <input type="text" id="url" name="urlPath" placeholder="Send bot to url path">
+    </div>
+    <div id="grid-item">
+        <input type="text" id="csrf" name="csrf" hidden="true" value="{{csrf}}">
+    </div>
+    <div id="grid-item">
+        <input type="submit" value="Submit">
+    </div>
+</form>
+
+<hr />
+
+<div id="grid-item">
+    <h3 style="color: rgb(207, 206, 206);">Bot Queue</h3>
+    <ol style="text-align: left;">
+        {% for urlPath in queue %}
+        <li>
+            <p style="color: rgb(253, 253, 253); text-wrap: wrap; word-wrap: break-word;">{{urlPath}}</p>
+        </li>
+        {% endfor %}
+    </ol>
+</div>
+
+<form action="/clearqueue" method="POST">
+    <input type="text" id="csrf" name="csrf" hidden="true" value="{{csrf}}">
+    <div id="grid-item">
+        <input type="submit" value="Clear Queue">
+    </div>
+</form>
+
+{% endblock %}

@@ -1,0 +1,17 @@
+version: "0.1"
+id: sunzi-perfect-math-class
+name: Sun Zi's Perfect Math Class
+category: beginner
+description: |
+  Everybody!! Sunzi's math class is about to begin!!!
+
+  Author: wednesday
+hosting_type: kube
+connection_info: ${url}
+tags:
+  - crypto
+flags:
+  - DUCTF{btw_y0u_c4n_als0_us3_CRT_f0r_p4rt14l_fr4ct10ns}
+hosting:
+  type: kube
+  template: web-challenge-writefs.yaml
