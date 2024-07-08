@@ -1,0 +1,5 @@
+chal-base-backups/*
+production/backups
+*.lck
+fp-info-cache
+firmware/build
